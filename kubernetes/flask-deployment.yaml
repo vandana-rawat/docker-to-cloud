@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: flask-deployment
 spec:
-  replicas: 2
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       app: flask
@@ -14,7 +19,7 @@ spec:
     spec:
       containers:
         - name: flask-container
-          image: gurjeetkaur0005/web-flask-app:latest
+          image: gurjeetkaur0005/web-flask-app:v2
           ports:
             - containerPort: 5000
           env:
@@ -22,3 +27,19 @@ spec:
               value: "mongo-service"
             - name: MONGO_PORT
               value: "27017"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
