@@ -1,13 +1,13 @@
 # Cloud-Native To-Do Application Deployment (Docker + Kubernetes + AWS EKS)
 
-## 📌 Project Overview
+## Project Overview
 This project demonstrates the end-to-end deployment of a cloud-native To-Do web application using Flask and MongoDB, containerized with Docker, and deployed using Kubernetes both locally (Minikube) and on the cloud (AWS EKS).
 
 The goal of this project was to understand how modern applications are built, deployed, scaled, and monitored in a production-like environment.
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 - Backend: Flask (Python)
 - Database: MongoDB
 - Containerization: Docker
@@ -19,7 +19,7 @@ The goal of this project was to understand how modern applications are built, de
 
 ---
 
-## ⚙️ Project Architecture
+## Project Architecture
 The system consists of:
 - Flask application container
 - MongoDB container for persistent storage
@@ -30,7 +30,7 @@ The system consists of:
 
 ---
 
-## 🚀 Features Implemented
+## Features Implemented
 
 ### Containerization
 - Created Docker images for Flask app and MongoDB
@@ -102,7 +102,7 @@ kubectl apply -f service.yaml
 
 ---
 
-## 📊 Key Learnings
+## Key Learnings
 - Understanding containerization using Docker
 - Deploying applications using Kubernetes
 - Managing replicas and scaling
@@ -112,11 +112,11 @@ kubectl apply -f service.yaml
 
 ---
 
-## 👩‍💻 Contributors
-- You
-- Your Teammate
+## Contributors
+- Gurjeet Kaur gk2845
+- Vandana Rawat vr2645
 
 ---
 
-## 📌 Conclusion
+## Conclusion
 This project provided hands-on experience in building and deploying a scalable, reliable, and production-ready application using modern cloud-native technologies. It helped bridge the gap between development and real-world deployment practices.
